@@ -1,0 +1,139 @@
+@font-face {
+	font-family: montserrat;
+	src: url(fonts/montserrat/Montserrat-ExtraBold.otf);
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: montserrat;
+	src: url(fonts/montserrat/Montserrat-Regular.otf);
+}
+
+h1 {
+	font-weight: 900;
+	font-size:30px;
+}
+
+* {
+	font-family: montserrat;
+}
+
+html, body{
+	margin:0px;
+	height:100%;
+	min-height:100%;
+	overflow:hidden;
+}
+
+body {
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: center;
+	
+	left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+}
+
+body > div {
+	width:50%;
+	padding:40px;
+}
+
+#header {
+	display: flex;
+	flex-direction: column;
+}
+
+#header > * {
+	max-width:500px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#header > p {
+	text-justify: inter-word;
+	text-align: justify;
+}
+
+#header > h1 {
+	text-align:center;
+}
+
+#header > h4 {
+	text-align:center;
+}
+
+.pet-projects-header {
+	display: flex;
+	flex-direction: row;
+	text-align: justify;
+	align-content: stretch;
+}
+
+.pet-projects-header a{
+	display: flex;
+}
+
+.pet-projects-header h4 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.github-link {
+	height: 20px;
+	width:  20px;
+	margin-left: 20px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#location-content {
+	display: flex;
+	flex-direction:row;
+}	
+
+#location-map {
+	height: 128px;
+	width: 128px;
+	border: 4px solid black;
+	margin-right: 20px;
+}
+
+#location-map img {
+	height: 128px;
+	width: 128px;
+}
+
+#location-details {
+	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
+}
+
+#location-details > * {
+	flex: 0 1 auto;
+	margin-top:auto;
+	margin-bottom: auto;
+}
+
+.hidden {
+	visibility: hidden;
+}
