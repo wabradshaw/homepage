@@ -9,7 +9,9 @@
 		<link rel="stylesheet" type="text/css" href="lightbox/lightbox.css" />
 		
         <script src="jquery/jquery-3.1.1.min.js"></script>
-		<script src="lightbox/lightbox.js"></script>		
+		<script src="lightbox/lightbox.js"></script>
+		
+		<script src="content.js"></script>		
         <title>William Bradshaw</title>
     </head>
     <body>
@@ -22,7 +24,7 @@
 			<div id="blog">
 				<h2><a href="https://wabradshaw.wordpress.com">BLOG<a/></h2>
 				<p>This is where I post all of my gibbering. Expect talk about travel, programming, and terrible jokes.</p>
-				<p>Latest post: <a href="https://wabradshaw.wordpress.com/2018/07/26/part-11-unexpected-ambivalence/">Florence<a/></p>
+				<p>Latest post: <a id="latest-blog-post"><a/></p>
 			</div>
 			<div id="pet projects">
 				<h2>PET PROJECTS</h2>
@@ -43,10 +45,10 @@
 			<div id="location">
 				<h2>LOCATION</h2>
 				<div id="location-content">
-					<a id="location-map" href="tirana.png" data-lightbox="map"><img src="tirana.png"/></a>
+					<a id="location-map" data-lightbox="map"><img /></a>
 					<div id="location-details">
-						<p>Tirana, Albania</p>
-						<p>GMT +2</p>
+						<p><span id="location-name"></span>, <span id="location-country"></span></p>
+						<p id="location-timezone"></p>
 						<p><a href="www.facebook.com" class="hidden">See History</a></p>
 					</div>
 				</div>
