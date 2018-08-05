@@ -47,6 +47,7 @@ function Trip(name, country, startDate, endDate, blog, mapUrl){
 	
 	self.name = name;
 	self.country = country;
+	self.startPoint = startDate.millis;
 	self.combinedTimestamp = getCombinedTimestamp(startDate, endDate);
 	self.blogUrl = blog != null ? blog.url : null;
 	self.blogName = blog != null ? blog.name : null;
@@ -65,6 +66,8 @@ function HistoryViewModel(){
 		console.log(data);
 		self.trips($.map(data, function(item){
 			return new Trip(item.name, item.country, item.startTime, item.endTime, item.blog, item.mapUrl);
+		}).sort(function(a, b) {
+			return b.startPoint - a.startPoint;
 		}));
 	})
 }
