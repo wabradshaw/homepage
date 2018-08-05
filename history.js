@@ -3,15 +3,24 @@ var baseUrl = "http://localhost:8080/travel-history/";
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 /**
- * Converts a day of the month into an ordinal (e.g. 1st, 2nd, 3rd). Needs to be improved.
+ * Converts a day of the month into an ordinal (e.g. 1st, 2nd, 3rd).
  */
 function asOrdinal(day){
-	var ending;
-	if(day in [1,21,31]) {ending = "st";}
-	else if(day in [2,22]) {ending = "nd";}
-	else if(day in [3,23]) {ending = "rd";}
-	else {ending = "th";}
-	return day + ending;
+	switch(day){
+		case 1, 21, 31:
+			return day + "st";
+			break;
+		case 2, 22:
+			return day + "nd";
+			break;
+		case 3, 23:
+			return day + "rd";
+			break;
+			case 1:
+		default:
+			return day + "th";
+			break;
+	}
 }
 
 /**
