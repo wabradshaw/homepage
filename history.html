@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="generator"
+        content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+        <link rel="stylesheet" type="text/css" href="css/site.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+        <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" /> 
+		<link rel="stylesheet" type="text/css" href="lightbox/lightbox.css" />
+		
+        <script src="jquery/jquery-3.1.1.min.js"></script>
+		<script src="lightbox/lightbox.js"></script>
+		<script src="knockout/knockout-3.4.2.js"></script>
+		
+		<script src="history.js"></script>		
+        <title>William Bradshaw</title>
+    </head>
+    <body>
+		<div id="history-wrapper" data-bind="foreach: trips">
+			<div id="location-content">
+				<a data-bind="attr: {href: mapUrl}" id="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
+				<div class="location-details">
+					<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
+					<p data-bind="text: combinedTimestamp"></p>
+					<p data-bind="if: blogUrl != null"><a data-bind="attr: {href: blogUrl}, text:blogName"><a/></p>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
