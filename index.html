@@ -10,6 +10,7 @@
 		
         <script src="jquery/jquery-3.1.1.min.js"></script>
 		<script src="lightbox/lightbox.js"></script>
+		<script src="knockout/knockout-3.4.2.js"></script>
 		
 		<script src="content.js"></script>		
         <title>William Bradshaw</title>
@@ -24,7 +25,7 @@
 			<div id="blog">
 				<h2><a href="https://wabradshaw.wordpress.com">BLOG<a/></h2>
 				<p>This is where I post all of my gibbering. Expect talk about travel, programming, and terrible jokes.</p>
-				<p>Latest post: <a id="latest-blog-post"><a/></p>
+				<p data-bind="if: latestBlog()">Latest post: <a id="latest-blog-post" data-bind="attr: {href: latestBlog().url}, text: latestBlog().name"><a/></p>
 			</div>
 			<div id="pet projects">
 				<h2>PET PROJECTS</h2>
@@ -44,12 +45,14 @@
 			</div>
 			<div id="location">
 				<h2>LOCATION</h2>
-				<div id="location-content">
-					<a id="location-map" data-lightbox="map"><img /></a>
-					<div id="location-details">
-						<p><span id="location-name"></span>, <span id="location-country"></span></p>
-						<p id="location-timezone"></p>
-						<p><a href="www.facebook.com" class="hidden">See History</a></p>
+				<div id="history-wrapper" data-bind="with: currentTrip">
+					<div class="location-content">
+						<a data-bind="attr: {href: mapUrl}" id="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
+						<div class="location-details">
+							<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
+							<p data-bind="text: combinedTimestamp"></p>
+							<p data-bind="if: blog != null"><a data-bind="attr: {href: blog.url}, text:blog.name"><a/></p>
+						</div>
 					</div>
 				</div>
 			</div>
