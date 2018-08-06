@@ -17,12 +17,12 @@
     </head>
     <body>
 		<div id="history-wrapper" data-bind="foreach: trips">
-			<div id="location-content">
+			<div class="location-content">
 				<a data-bind="attr: {href: mapUrl}" id="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
 				<div class="location-details">
 					<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
 					<p data-bind="text: combinedTimestamp"></p>
-					<p data-bind="if: blogUrl != null"><a data-bind="attr: {href: blogUrl}, text:blogName"><a/></p>
+					<p data-bind="if: blog != null"><a data-bind="attr: {href: blog.url}, text:blog.name"><a/></p>
 				</div>
 			</div>
 		</div>

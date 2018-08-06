@@ -43,32 +43,50 @@ function getCombinedTimestamp(startDate, endDate) {
 }
 
 /**
- * A single trip.
+ * Knockout Data class for a single trip.
  */
-function Trip(name, country, startDate, endDate, blog, mapUrl){
+function Trip(name, country, startDate, endDate, timezone, blog, mapUrl){
 	var self = this;
 	
 	self.name = name;
 	self.country = country;
 	self.startPoint = startDate.millis;
+	self.timezone = timezone >= 0 ? "+" + timezone : timezone;
 	self.combinedTimestamp = getCombinedTimestamp(startDate, endDate);
-	self.blogUrl = blog != null ? blog.url : null;
-	self.blogName = blog != null ? blog.name : null;
+	self.blog = blog != null ? new Blog(blog.name, blog.url) : null;
 	self.mapUrl = mapUrl;
+}
+
+/**
+ * Knockout Data class for a blog.
+ */
+function Blog(name, url){
+	var self = this;
+	self.name = name;
+	self.url = url;
 }
 
 /**
  * Main Knockout view model containing the trip history.
  */
-function HistoryViewModel(){
+function ContentViewModel(){
 	var self = this;
 	
+	self.latestBlog = ko.observable();
+	self.currentTrip = ko.observable();
 	self.trips = ko.observableArray([]);
 	
+	$.get(baseUrl + "history/current", function(data){
+		self.currentTrip(new Trip(data.name, data.country, data.startTime, data.endTime, data.timezone, data.blog, data.mapUrl));
+	})
+	
+	$.get(baseUrl + "blog/latest", function(data){
+		self.latestBlog(new Blog(data.name, data.url));
+	})
+	
 	$.get(baseUrl + "history", function(data){
-		console.log(data);
 		self.trips($.map(data, function(item){
-			return new Trip(item.name, item.country, item.startTime, item.endTime, item.blog, item.mapUrl);
+			return new Trip(item.name, item.country, item.startTime, item.endTime, item.timezone, item.blog, item.mapUrl);
 		}).sort(function(a, b) {
 			return b.startPoint - a.startPoint;
 		}));
@@ -76,8 +94,8 @@ function HistoryViewModel(){
 }
 
 /**
- * Register the HistoryViewModel.
+ * Register the ContentViewModel.
  */
 $( document ).ready(function() {
-	ko.applyBindings(new HistoryViewModel());
+	ko.applyBindings(new ContentViewModel());
 });
