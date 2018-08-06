@@ -72,9 +72,18 @@ function Blog(name, url){
 function ContentViewModel(){
 	var self = this;
 	
+	self.mode = ko.observable('default');
 	self.latestBlog = ko.observable();
 	self.currentTrip = ko.observable();
 	self.trips = ko.observableArray([]);
+	
+	self.showDefault = function(){
+		self.mode('default');
+	}
+		
+	self.showLocationHistory = function(){
+		self.mode('history');
+	}
 	
 	$.get(baseUrl + "history/current", function(data){
 		self.currentTrip(new Trip(data.name, data.country, data.startTime, data.endTime, data.timezone, data.blog, data.mapUrl));

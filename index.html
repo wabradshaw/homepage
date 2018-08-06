@@ -22,32 +22,49 @@
 			<p>Hi, I'm William, a digital nomad travelling through Europe working on a few personal projects. This site contains anything I write, anything I develop, and anything I photograph on my travels.</p>
 		</div>
 		<div id="content">
-			<div id="blog">
-				<h2><a href="https://wabradshaw.wordpress.com">BLOG<a/></h2>
-				<p>This is where I post all of my gibbering. Expect talk about travel, programming, and terrible jokes.</p>
-				<p data-bind="if: latestBlog()">Latest post: <a id="latest-blog-post" data-bind="attr: {href: latestBlog().url}, text: latestBlog().name"><a/></p>
-			</div>
-			<div id="pet projects">
-				<h2>PET PROJECTS</h2>
-				<div id="pet-projects-content">
-					<div class="pet-projects-header">
-						<h4 class="project-title"><a href="https://github.com/wabradshaw/palettest">Palettest</a></h4>
-						<a href="https://github.com/wabradshaw/palettest"><img class="github-link" src="images/external/GitHub-Mark-32px.png"/></a>
+			<div id="default-view" data-bind="if: mode() == 'default'">
+				<div id="blog">
+					<h2><a href="https://wabradshaw.wordpress.com">BLOG<a/></h2>
+					<p>This is where I post all of my gibbering. Expect talk about travel, programming, and terrible jokes.</p>
+					<p data-bind="if: latestBlog()">Latest post: <a id="latest-blog-post" data-bind="attr: {href: latestBlog().url}, text: latestBlog().name"><a/></p>
+				</div>
+				<div id="pet projects">
+					<h2>PET PROJECTS</h2>
+					<div id="pet-projects-content">
+						<div class="pet-projects-header">
+							<h4 class="project-title"><a href="https://github.com/wabradshaw/palettest">Palettest</a></h4>
+							<a href="https://github.com/wabradshaw/palettest"><img class="github-link" src="images/external/GitHub-Mark-32px.png"/></a>
+						</div>
+						<p class="project-description">Palettest is a Java library designed to help people test images. It contains a whole suite of functions designed to make every part of testing images easier. Some of these functions are designed to save you writing a few lines of code, but the bit that is unique is the ability to easily test the color palette being used in the image.
+						</p>
+						<div class="pet-projects-header">
+							<h4 class="project-title"><a href="code/cartographix/index.html">Cartographix</a></h4>
+							<a href="https://github.com/wabradshaw/cartographix"><img class="github-link" src="images/external/GitHub-Mark-32px.png"/></a>
+						</div>
+						<p class="project-description">A way of drawing stylised maps, like the one in the Location section. Pick a place, pick a colour, and see what it looks like. Just don't pick anything on a small screen because I've not made it a responsive design yet.</p>
 					</div>
-					<p class="project-description">Palettest is a Java library designed to help people test images. It contains a whole suite of functions designed to make every part of testing images easier. Some of these functions are designed to save you writing a few lines of code, but the bit that is unique is the ability to easily test the color palette being used in the image.
-					</p>
-					<div class="pet-projects-header">
-						<h4 class="project-title"><a href="code/cartographix/index.html">Cartographix</a></h4>
-						<a href="https://github.com/wabradshaw/cartographix"><img class="github-link" src="images/external/GitHub-Mark-32px.png"/></a>
+				</div>
+				<div id="location">
+					<h2>LOCATION</h2>
+					<a href="#" data-bind="click: showLocationHistory">See all</a>
+					<div id="location-wrapper" data-bind="with: currentTrip">
+						<div class="location-content">
+							<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
+							<div class="location-details">
+								<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
+								<p data-bind="text: combinedTimestamp"></p>
+								<p data-bind="if: blog != null"><a data-bind="attr: {href: blog.url}, text:blog.name"><a/></p>
+							</div>
+						</div>
 					</div>
-					<p class="project-description">A way of drawing stylised maps, like the one in the Location section. Pick a place, pick a colour, and see what it looks like. Just don't pick anything on a small screen because I've not made it a responsive design yet.</p>
 				</div>
 			</div>
-			<div id="location">
-				<h2>LOCATION</h2>
-				<div id="history-wrapper" data-bind="with: currentTrip">
+			<div id="history-view" data-bind="if: mode() == 'history'">			
+				<h2>HISTORY</h2>
+				<a href="#" data-bind="click: showDefault">Back</a>
+				<div id="history-wrapper" data-bind="foreach: trips">
 					<div class="location-content">
-						<a data-bind="attr: {href: mapUrl}" id="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
+						<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
 						<div class="location-details">
 							<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
 							<p data-bind="text: combinedTimestamp"></p>
@@ -55,7 +72,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>			
 		</div>
     </body>
 </html>
