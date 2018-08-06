@@ -7,16 +7,19 @@ var months = ["January", "February", "March", "April", "May", "June", "July", "A
  */
 function asOrdinal(day){
 	switch(day){
-		case 1, 21, 31:
+		case 1:
+		case 21: 
+		case 31:
 			return day + "st";
 			break;
-		case 2, 22:
+		case 2: 
+		case 22:
 			return day + "nd";
 			break;
-		case 3, 23:
+		case 3: 
+		case 23:
 			return day + "rd";
 			break;
-			case 1:
 		default:
 			return day + "th";
 			break;
@@ -35,7 +38,7 @@ function getCombinedTimestamp(startDate, endDate) {
 	} else if(startDate.monthOfYear == endDate.monthOfYear) {
 		return months[startDate.monthOfYear] + " " + asOrdinal(startDate.dayOfMonth) + " - " + asOrdinal(endDate.dayOfMonth);
 	} else {
-		return months[startDate.monthOfYear] + " " + asOrdinal(startDate.dayOfMonth) + " - " + months[endDate.monthOfYear] + asOrdinal(endDate.dayOfMonth);
+		return months[startDate.monthOfYear] + " " + asOrdinal(startDate.dayOfMonth) + " - " + months[endDate.monthOfYear] + " " + asOrdinal(endDate.dayOfMonth);
 	}		
 }
 
