@@ -34,7 +34,7 @@ function asOrdinal(day){
  */
 function getCombinedTimestamp(startDate, endDate) {
 	if(endDate == null){
-		return asOrdinal(startDate) + " onwards";
+		return months[startDate.monthOfYear] + " " + asOrdinal(startDate.dayOfMonth) + " onwards";
 	} else if(startDate.monthOfYear == endDate.monthOfYear) {
 		return months[startDate.monthOfYear] + " " + asOrdinal(startDate.dayOfMonth) + " - " + asOrdinal(endDate.dayOfMonth);
 	} else {
