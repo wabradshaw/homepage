@@ -1,6 +1,6 @@
 var baseUrl = "http://localhost:8080/travel-history/";
 
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var months = ["December", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 /**
  * Converts a day of the month into an ordinal (e.g. 1st, 2nd, 3rd).
