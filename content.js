@@ -1,4 +1,4 @@
-var baseUrl = "http://localhost:8080/travel-history/";
+var baseUrl = "http://54.191.146.40:8080/travel-history/";
 
 var months = ["December", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -43,13 +43,28 @@ function getCombinedTimestamp(startDate, endDate) {
 }
 
 /**
- * Knockout Data class for a single trip.
+ *Knockout Data class for a trip spanning multiple locations.
  */
-function Trip(name, country, startDate, endDate, timezone, blog, mapUrl){
+function Trip(name){
+	var self = this;
+
+	self.name = name;
+	self.locations = ko.observableArray([]);
+	
+	self.addLocation = function(location){
+		self.locations.push(location);
+	}
+}
+
+/**
+ * Knockout Data class for a single location.
+ */
+function Location(name, country, trip, startDate, endDate, timezone, blog, mapUrl){
 	var self = this;
 	
 	self.name = name;
 	self.country = country;
+	self.trip = trip;
 	self.startPoint = startDate.millis;
 	self.timezone = timezone >= 0 ? "+" + timezone : timezone;
 	self.combinedTimestamp = getCombinedTimestamp(startDate, endDate);
@@ -74,8 +89,9 @@ function ContentViewModel(){
 	
 	self.mode = ko.observable('default');
 	self.latestBlog = ko.observable();
-	self.currentTrip = ko.observable();
+	self.currentLocation = ko.observable();
 	self.trips = ko.observableArray([]);
+	self.locations = ko.observableArray([]);
 	
 	self.showDefault = function(){
 		self.mode('default');
@@ -86,7 +102,7 @@ function ContentViewModel(){
 	}
 	
 	$.get(baseUrl + "history/current", function(data){
-		self.currentTrip(new Trip(data.name, data.country, data.startTime, data.endTime, data.timezone, data.blog, data.mapUrl));
+		self.currentLocation(new Location(data.name, data.country, data.group, data.startTime, data.endTime, data.timezone, data.blog, data.mapUrl));
 	})
 	
 	$.get(baseUrl + "blog/latest", function(data){
@@ -94,11 +110,24 @@ function ContentViewModel(){
 	})
 	
 	$.get(baseUrl + "history", function(data){
-		self.trips($.map(data, function(item){
-			return new Trip(item.name, item.country, item.startTime, item.endTime, item.timezone, item.blog, item.mapUrl);
+		self.locations($.map(data, function(item){
+			return new Location(item.name, item.country, item.group, item.startTime, item.endTime, item.timezone, item.blog, item.mapUrl);
 		}).sort(function(a, b) {
 			return b.startPoint - a.startPoint;
 		}));
+		
+		if(self.locations().length > 0){
+			var currentTrip = new Trip(self.locations()[0].trip);
+			$.each(self.locations(), function(index){
+				var item = self.locations()[index];
+				if(currentTrip.name != item.trip){
+					self.trips.push(currentTrip);
+					currentTrip = new Trip(item.trip);
+				}
+				currentTrip.addLocation(item);
+			})
+			self.trips.push(currentTrip);
+		}
 	})
 }
 

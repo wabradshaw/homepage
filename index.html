@@ -47,13 +47,13 @@
 				<div id="location">
 					<h2>LOCATION</h2>
 					<a href="#" data-bind="click: showLocationHistory">See all</a>
-					<div id="location-wrapper" data-bind="with: currentTrip">
+					<div id="location-wrapper" data-bind="with: currentLocation">
 						<div class="location-content">
 							<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
 							<div class="location-details">
+								<p><span data-bind="text: trip"></span></p>
 								<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
 								<p data-bind="text: combinedTimestamp"></p>
-								<p data-bind="if: blog != null"><a data-bind="attr: {href: blog.url}, text:blog.name"><a/></p>
 							</div>
 						</div>
 					</div>
@@ -63,12 +63,15 @@
 				<h2>HISTORY</h2>
 				<a href="#" data-bind="click: showDefault">Back</a>
 				<div id="history-wrapper" data-bind="foreach: trips">
-					<div class="location-content">
-						<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
-						<div class="location-details">
-							<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
-							<p data-bind="text: combinedTimestamp"></p>
-							<p data-bind="if: blog != null"><a data-bind="attr: {href: blog.url}, text:blog.name"><a/></p>
+					<h2 data-bind="text: name"></h2>
+					<div data-bind="foreach: locations">
+						<div class="location-content">
+							<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
+							<div class="location-details">
+								<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
+								<p data-bind="text: combinedTimestamp"></p>
+								<p data-bind="if: blog != null"><a data-bind="attr: {href: blog.url}, text: blog.name"><a/></p>
+							</div>
 						</div>
 					</div>
 				</div>
