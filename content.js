@@ -59,9 +59,10 @@ function Trip(name){
 /**
  * Knockout Data class for a single location.
  */
-function Location(name, country, trip, startDate, endDate, timezone, blog, mapUrl){
+function Location(uuid, name, country, trip, startDate, endDate, timezone, blog, mapUrl){
 	var self = this;
-	
+
+	self.uuid = uuid;	
 	self.name = name;
 	self.country = country;
 	self.trip = trip;
@@ -102,7 +103,7 @@ function ContentViewModel(){
 	}
 	
 	$.get(baseUrl + "history/current", function(data){
-		self.currentLocation(new Location(data.name, data.country, data.group, data.startTime, data.endTime, data.timezone, data.blog, data.mapUrl));
+		self.currentLocation(new Location(data.uuid, data.name, data.country, data.group, data.startTime, data.endTime, data.timezone, data.blog, data.mapUrl));
 	})
 	
 	$.get(baseUrl + "blog/latest", function(data){
@@ -111,7 +112,7 @@ function ContentViewModel(){
 	
 	$.get(baseUrl + "history", function(data){
 		self.locations($.map(data, function(item){
-			return new Location(item.name, item.country, item.group, item.startTime, item.endTime, item.timezone, item.blog, item.mapUrl);
+			return new Location(item.uuid, item.name, item.country, item.group, item.startTime, item.endTime, item.timezone, item.blog, item.mapUrl);
 		}).sort(function(a, b) {
 			return b.startPoint - a.startPoint;
 		}));
