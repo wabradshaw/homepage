@@ -64,7 +64,7 @@
 				<h2>HISTORY</h2>
 				<a href="#" data-bind="click: showDefault">Back</a>
 				<div id="history-wrapper" data-bind="foreach: trips">
-					<h2 data-bind="text: name"></h2>
+					<h3 data-bind="text: name"></h3>
 					<div data-bind="foreach: locations">
 						<div class="location-content">
 							<a data-bind="attr: {href: mapUrl, 'data-lightbox': uuid, 'data-title': name}" class="location-map" ><img data-bind="attr: {src: mapUrl}"/></a>

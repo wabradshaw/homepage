@@ -103,7 +103,8 @@ function ContentViewModel(){
 		$( "#history-wrapper" ).accordion({
 			collapsible: true, 
 			heightStyle: "content", 
-			active: false
+			active: false,
+			icons: false
 		});
 	}
 	
