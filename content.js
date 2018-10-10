@@ -100,6 +100,11 @@ function ContentViewModel(){
 		
 	self.showLocationHistory = function(){
 		self.mode('history');
+		$( "#history-wrapper" ).accordion({
+			collapsible: true, 
+			heightStyle: "content", 
+			active: false
+		});
 	}
 	
 	$.get(baseUrl + "history/current", function(data){
