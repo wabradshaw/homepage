@@ -29,17 +29,20 @@ function asOrdinal(day){
 /**
  * Combines the startDate and endDate timestamps. Dates use one of three forms, based on relevant info:
  * April 21st onwards
- * April 21st - 28th
  * April 21st - May 2nd
+ * April 21st - 28th
+ * Aprin 21st
  */
 function getCombinedTimestamp(startDate, endDate) {
 	if(endDate == null){
 		return months[startDate.monthOfYear] + " " + asOrdinal(startDate.dayOfMonth) + " onwards";
-	} else if(startDate.monthOfYear == endDate.monthOfYear) {
-		return months[startDate.monthOfYear] + " " + asOrdinal(startDate.dayOfMonth) + " - " + asOrdinal(endDate.dayOfMonth);
-	} else {
+	} else if(startDate.monthOfYear != endDate.monthOfYear) {
 		return months[startDate.monthOfYear] + " " + asOrdinal(startDate.dayOfMonth) + " - " + months[endDate.monthOfYear] + " " + asOrdinal(endDate.dayOfMonth);
-	}		
+	} else if(startDate.dayOfMonth != endDate.dayOfMonth){
+		return months[startDate.monthOfYear] + " " + asOrdinal(startDate.dayOfMonth) + " - " + asOrdinal(endDate.dayOfMonth);	
+	} else {
+		return months[startDate.monthOfYear] + " " + asOrdinal(startDate.dayOfMonth);
+	}	
 }
 
 /**
