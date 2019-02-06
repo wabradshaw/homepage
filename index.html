@@ -5,7 +5,7 @@
         content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-        <link rel="stylesheet" type="text/css" href="css/site.css?v=1.2" />
+        <link rel="stylesheet" type="text/css" href="css/site.css?v=2.0" />
         <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
         <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" /> 
 		<link rel="stylesheet" type="text/css" href="lightbox/lightbox.css" />
@@ -19,66 +19,176 @@
         <title>William Bradshaw</title>
     </head>
     <body>
-        <div id="header" data-bind="css: mode">
+        <div id="header">
             <h1>WILLIAM A BRADSHAW</h1>
-            <h4>w.a.bradshaw@gmail.com</h4>
-			<p>Hi, I'm William, a digital nomad travelling through Europe working on a few personal projects. This site contains anything I write, anything I develop, and anything I photograph on my travels.</p>
+            <h2>w.a.bradshaw@gmail.com</h2>
+			<p>Hi, I'm William, a digital nomad travelling the world working on a few personal projects. This site contains anything I write, anything I develop, and anything I photograph on my travels. Scroll down to see a few of the things I've built.</p>
 		</div>
-		<div id="content">
-			<div id="default-view" data-bind="if: mode() == 'default'">
-				<div id="blog">
-					<h2><a href="https://wabradshaw.wordpress.com">BLOG<a/></h2>
-					<p>This is where I post all of my gibbering. Expect talk about travel, programming, and terrible jokes.</p>
-					<p data-bind="if: latestBlog()">Latest post: <a id="latest-blog-post" data-bind="attr: {href: latestBlog().url}, text: latestBlog().name"><a/></p>
+		<div id="projects-wrapper">
+			<div id="projects">
+				<div class="grid-box">
+					<h1 id="projects-header">SELECTED PROJECTS</h1>
 				</div>
-				<div id="pet projects">
-					<h2>PET PROJECTS</h2>
-					<div id="pet-projects-content">
-						<div class="pet-projects-header">
-							<h4 class="project-title"><a href="https://github.com/wabradshaw/palettest">Palettest</a></h4>
-							<a href="https://github.com/wabradshaw/palettest"><img class="github-link" src="images/external/GitHub-Mark-32px.png"/></a>
+				<div class="grid-box">
+					<div class="project">
+						<div class="image-wrapper">
+							<img class="dull-image" src="./images/claptrap-wb-alt.svg"/>
+							<img class="bright-image"src="./images/claptrap-wb.svg"/>
 						</div>
-						<p class="project-description">Palettest is a Java library designed to help people test images. It contains a whole suite of functions designed to make every part of testing images easier. Some of these functions are designed to save you writing a few lines of code, but the bit that is unique is the ability to easily test the color palette being used in the image.
-						</p>
-						<div class="pet-projects-header">
-							<h4 class="project-title"><a href="code/cartographix/index.html">Cartographix</a></h4>
-							<a href="https://github.com/wabradshaw/cartographix"><img class="github-link" src="images/external/GitHub-Mark-32px.png"/></a>
+						<div class="project-descriptor">
+							Claptrap is an AI that tells jokes. Terrible jokes. It generates these jokes itself by understanding the relationships between words.
 						</div>
-						<p class="project-description">A way of drawing stylised maps, like the one in the Location section. Pick a place, pick a colour, and see what it looks like. Just don't pick anything on a small screen because I've not made it a responsive design yet.</p>
+						<div class="project-actions">
+							<a href="https://github.com/wabradshaw/claptrap"><span>GitHub</span></a>
+							<a href="https://www.claptrapapp.com"><span>Try It</span></a>
+						</div>
 					</div>
 				</div>
-				<div id="location">
-					<h2>LOCATION</h2>
-					<a href="#" data-bind="click: showLocationHistory">See all</a>
-					<div id="location-wrapper" data-bind="with: currentLocation">
-						<div class="location-content">
-							<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
-							<div class="location-details">
-								<p><span data-bind="text: trip"></span></p>
-								<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
-								<p data-bind="text: combinedTimestamp"></p>
-							</div>
+				<div class="grid-box">
+					<div class="project">
+						<div class="image-wrapper">
+							<img class="dull-image" src="./images/palettest-wb-alt.svg"/>
+							<img class="bright-image"src="./images/palettest-wb.svg"/>
+						</div>
+						<div class="project-descriptor">
+							Palettest is a Java library for testing images. It lets you test the palette that makes up an image, instead of matching exact colours.
+						</div>
+						<div class="project-actions">
+							<a href="https://github.com/wabradshaw/palettest"><span>GitHub</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="grid-box">
+					<div class="project">
+						<div class="image-wrapper">
+							<img class="dull-image" src="./images/wheres-william-wb-alt.svg"/>
+							<img class="bright-image"src="./images/wheres-william-wb.svg"/>
+						</div>
+						<div class="project-descriptor">
+							Where's William is an Alexa app that tells you about my travels. It lets you know where I am now and where I've been in the past.
+						</div>
+						<div class="project-actions">
+							<a href="https://github.com/wabradshaw/wheres-william"><span>GitHub</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="grid-box">
+					<div class="project">
+						<div class="image-wrapper">
+							<img class="dull-image" src="./images/cartographix-wb-alt2.svg"/>
+							<img class="bright-image"src="./images/cartographix-wb.svg"/>
+						</div>
+						<div class="project-descriptor">
+							Cartographix is an javascript app that draws styalised maps, like the ones below. Doesn't work on small screens. 
+						</div>
+						<div class="project-actions">
+							<a href="https://github.com/wabradshaw/cartographix"><span>GitHub</span></a>
+							<a href="./code/cartographix/index.html"><span>Try It</span></a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div id="history-view" data-bind="if: mode() == 'history'">			
-				<h2>HISTORY</h2>
-				<a href="#" data-bind="click: showDefault">Back</a>
-				<div id="history-wrapper" data-bind="foreach: trips">
-					<h3 data-bind="text: name"></h3>
-					<div data-bind="foreach: locations">
-						<div class="location-content">
-							<a data-bind="attr: {href: mapUrl, 'data-lightbox': uuid, 'data-title': name}" class="location-map" ><img data-bind="attr: {src: mapUrl}"/></a>
-							<div class="location-details">
-								<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
-								<p data-bind="text: combinedTimestamp"></p>
-								<p data-bind="if: blog != null"><a data-bind="attr: {href: blog.url}, text: blog.name"></a></p>
-							</div>
+		</div>
+		<div id="about-me-wrapper">		
+			<div id="about-me">
+			<h1>ABOUT ME</h1>
+			<p>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p><p>
+Why do we use it?
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+</p><p>
+Where does it come from?
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+</p>
+			</div>
+		</div>
+		<div id="locations-wrapper">
+			<div id="locations">
+				<div class="location-grid-box">
+					<h1 id="locations-header">TRAVELS</h1>
+				</div>
+				<div class="location-grid-box">
+					<div class="location">
+						<div class="map-wrapper">
+							<img class="dull-image" src="./images/travelling3.png"/>
+							<img class="bright-image" src="./images/travelling3.png"/>
 						</div>
+						<div class="trip-header">
+							<div class="trip-title">South East Asia</div> 
+							<div class="trip-dates">Oct - Dec 2018</div> 
+						</div>
+						<div class="show-trip-button"><i class="fa fa-lg fa-plus"></i></div>
 					</div>
 				</div>
-			</div>			
-		</div>
+				<div class="location-grid-box">
+					<div class="location">
+						<div class="map-wrapper">
+							<img class="dull-image" src="./images/travelling2.png"/>
+							<img class="bright-image" src="./images/travelling2.png"/>
+						</div>
+						<div class="trip-header">
+							<div class="trip-title">The Balkans</div> 
+							<div class="trip-dates">Jul - Aug 2018</div> 
+						</div>
+						<div class="show-trip-button"><i class="fa fa-lg fa-plus"></i></div>
+					</div>
+				</div>
+				<div class="location-grid-box">
+					<div class="location">
+						<div class="map-wrapper">
+							<img class="dull-image" src="./images/travelling1.png"/>
+							<img class="bright-image" src="./images/travelling1.png"/>
+						</div>
+						<div class="trip-header">
+							<div class="trip-title">Southern Europe</div> 
+							<div class="trip-dates">Apr - May 2018</div> 
+						</div>
+						<div class="show-trip-button"><i class="fa fa-lg fa-plus"></i></div>
+					</div>
+				</div>
+				<div class="location-grid-box">
+					<div class="location">
+						<div class="map-wrapper">
+							<img class="dull-image" src="./images/travelling4.png"/>
+							<img class="bright-image" src="./images/travelling4.png"/>
+						</div>
+						<div class="trip-header">
+							<div class="trip-title">Northern Europe</div> 
+							<div class="trip-dates">Jul 2017</div> 
+						</div>
+						<div class="show-trip-button"><i class="fa fa-lg fa-plus"></i></div>
+					</div>
+				</div>
+				<div class="location-grid-box">
+					<div class="location">
+						<div class="map-wrapper">
+							<img class="dull-image" src="./images/travelling5.png"/>
+							<img class="bright-image" src="./images/travelling5.png"/>
+						</div>
+						<div class="trip-header">
+							<div class="trip-title">Everywhere</div>
+						</div>
+						<div class="show-trip-button"><i class="fa fa-lg fa-plus"></i></div>
+					</div>
+				</div>
+			</div>
+			<!--<div id="location">
+			<h2>LOCATION</h2>
+				<a href="#" data-bind="click: showLocationHistory">See all</a>
+				<div id="location-wrapper" data-bind="with: currentLocation">
+					<div class="location-content">
+						<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
+						<div class="location-details">
+							<p><span data-bind="text: trip"></span></p>
+							<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
+							<p data-bind="text: combinedTimestamp"></p>
+						</div>
+					</div>
+				</div>		
+			</div>-->
+		</div>		
     </body>
 </html>

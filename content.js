@@ -72,17 +72,7 @@ function Location(uuid, name, country, trip, startDate, endDate, timezone, blog,
 	self.startPoint = startDate.millis;
 	self.timezone = timezone >= 0 ? "+" + timezone : timezone;
 	self.combinedTimestamp = getCombinedTimestamp(startDate, endDate);
-	self.blog = blog != null ? new Blog(blog.name, blog.url) : null;
 	self.mapUrl = mapUrl;
-}
-
-/**
- * Knockout Data class for a blog.
- */
-function Blog(name, url){
-	var self = this;
-	self.name = name;
-	self.url = url;
 }
 
 /**
@@ -92,7 +82,6 @@ function ContentViewModel(){
 	var self = this;
 	
 	self.mode = ko.observable('default');
-	self.latestBlog = ko.observable();
 	self.currentLocation = ko.observable();
 	self.trips = ko.observableArray([]);
 	self.locations = ko.observableArray([]);
@@ -114,11 +103,7 @@ function ContentViewModel(){
 	$.get(baseUrl + "history/current", function(data){
 		self.currentLocation(new Location(data.uuid, data.name, data.country, data.group, data.startTime, data.endTime, data.timezone, data.blog, data.mapUrl));
 	})
-	
-	$.get(baseUrl + "blog/latest", function(data){
-		self.latestBlog(new Blog(data.name, data.url));
-	})
-	
+		
 	$.get(baseUrl + "history", function(data){
 		self.locations($.map(data, function(item){
 			return new Location(item.uuid, item.name, item.country, item.group, item.startTime, item.endTime, item.timezone, item.blog, item.mapUrl);
