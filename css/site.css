@@ -316,8 +316,6 @@ body {
 	width: 100vw;
 	padding-top: 40px;
 	padding-bottom: 30px;
-	margin-top:auto;
-	margin-bottom: auto;
 	text-align: center;
 	font-size: 40px;
 	
@@ -328,10 +326,12 @@ body {
 	#locations-header {
 		font-size: 50px;
 		width: 640px;
+		margin-top: 152px;
 	}
 }
 
 .location {
+	height: fit-content;
 	width: 90vw;
 	max-width: 600px;
 	margin: 5vw 5vw 0vw 5vw;
@@ -384,11 +384,12 @@ body {
 	left: 0px;
 	bottom: 0px;
 	right: 0px;
-	transition: opacity 1s;
 }
 
 .trip-header {
+	height: 48px;
 	margin: 20px;
+	position: relative;
 }
 
 .trip-title {
@@ -403,11 +404,11 @@ body {
 	border-radius: 50%;
 	position: absolute;
 	right: 20px;
-	bottom: 63px;
+	bottom: -2px;
 	font-size: small;
 	display: flex;
 	background-color: white;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	/*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
 	z-index: 5;
 }
 
@@ -416,10 +417,58 @@ body {
 		width: 60px;
 		height: 58px;
 		padding-top: 2px;
-		bottom: 58px;
+		bottom: -2px;
 		font-size: medium;
 	}
 }
 .show-trip-button > i.fa {
 	margin: auto;
+	transition: 0.5s;
+}
+
+.show-trip-button > i.fa.flipped {
+	transform: scale(1,-1);
+}
+
+.expand-spacer {
+	display: none;
+    border-top: solid 1px rgba(0,0,0,0.12);	
+	padding-bottom: 8px;
+}
+
+.full-history {
+	display: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.location-content {
+	display: flex;
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-top: 0px;
+	margin-bottom: 4px;
+}
+
+.location-content > * {
+	margin-bottom: auto;
+}
+.location-content > a > img{
+	height: 88px;
+	display: block;
+	padding: 0px;
+}
+
+.location-details {
+	margin-left: 8px;
+    border-bottom: solid 1px rgba(0,0,0,0.12);
+    width: 100%;
+	padding-bottom: 5px;
+}
+
+.location-content:last-child {
+	margin-bottom: 4px;
+}
+.location-content:last-child .location-details {
+    border-bottom: none;
 }

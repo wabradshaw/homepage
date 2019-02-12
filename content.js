@@ -1,4 +1,4 @@
-var baseUrl = "http://54.191.146.40:8080/travel-history/";
+var baseUrl = "https://wabradshaw.com/travel-history/";
 
 var months = ["December", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -85,6 +85,7 @@ function ContentViewModel(){
 	self.currentLocation = ko.observable();
 	self.trips = ko.observableArray([]);
 	self.locations = ko.observableArray([]);
+	self.locationsLoaded = ko.observable(false);
 	
 	self.showDefault = function(){
 		self.mode('default');
@@ -123,12 +124,35 @@ function ContentViewModel(){
 			})
 			self.trips.push(currentTrip);
 		}
+		
+		self.locationsLoaded(true);
 	})
+	
+	self.getTripLocations = function(targetName){		
+		return self.trips().find( obj => { return obj.name == targetName}).locations;
+	}
 }
 
+function toggleLocation(e){
+	if(!$(e.target).is('.full-history *')){
+		var loc = $(e.target).closest('.location');
+		loc.find('.show-trip-button > i').toggleClass('flipped');
+		loc.find('.expand-spacer').slideToggle('100');
+		loc.find('.full-history').slideToggle('1000');
+		
+	}
+}
 /**
  * Register the ContentViewModel.
  */
 $( document ).ready(function() {
 	ko.applyBindings(new ContentViewModel());
+	
+	$('body').click(function(e){
+		if(!$(e.target).is('.location') && !$(e.target).is('.location *')){
+			$('.flipped').removeClass('flipped');
+			$('.expand-spacer').slideUp('100');
+			$('.full-history').slideUp('1000');
+		}
+	});
 });

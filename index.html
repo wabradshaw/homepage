@@ -105,13 +105,13 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 </p>
 			</div>
 		</div>
-		<div id="locations-wrapper">
+		<div id="locations-wrapper" data-bind="if: locationsLoaded">
 			<div id="locations">
 				<div class="location-grid-box">
 					<h1 id="locations-header">TRAVELS</h1>
 				</div>
 				<div class="location-grid-box">
-					<div class="location">
+					<div class="location" onclick="toggleLocation(event)">
 						<div class="map-wrapper">
 							<img class="dull-image" src="./images/travelling3.png"/>
 							<img class="bright-image" src="./images/travelling3.png"/>
@@ -119,12 +119,22 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 						<div class="trip-header">
 							<div class="trip-title">South East Asia</div> 
 							<div class="trip-dates">Oct - Dec 2018</div> 
+							<div class="show-trip-button"><i class="fa fa-3x fa-angle-down"></i></div>
 						</div>
-						<div class="show-trip-button"><i class="fa fa-lg fa-plus"></i></div>
+						<div class="expand-spacer"></div>
+						<div class="full-history" data-bind="foreach: getTripLocations('South East Asia')">
+							<div class="location-content">
+								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Asia"><img data-bind="attr: {src: mapUrl}"/></a>
+								<div class="location-details">
+									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
+									<p data-bind="text: combinedTimestamp"></p>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 				<div class="location-grid-box">
-					<div class="location">
+					<div class="location" onclick="toggleLocation(event)">
 						<div class="map-wrapper">
 							<img class="dull-image" src="./images/travelling2.png"/>
 							<img class="bright-image" src="./images/travelling2.png"/>
@@ -132,12 +142,22 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 						<div class="trip-header">
 							<div class="trip-title">The Balkans</div> 
 							<div class="trip-dates">Jul - Aug 2018</div> 
+							<div class="show-trip-button"><i class="fa fa-3x fa-angle-down"></i></div>
 						</div>
-						<div class="show-trip-button"><i class="fa fa-lg fa-plus"></i></div>
+						<div class="expand-spacer"></div>
+						<div class="full-history" data-bind="foreach: getTripLocations('The Balkans')">
+							<div class="location-content">
+								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Balkans"><img data-bind="attr: {src: mapUrl}"/></a>
+								<div class="location-details">
+									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
+									<p data-bind="text: combinedTimestamp"></p>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 				<div class="location-grid-box">
-					<div class="location">
+					<div class="location" onclick="toggleLocation(event)">
 						<div class="map-wrapper">
 							<img class="dull-image" src="./images/travelling1.png"/>
 							<img class="bright-image" src="./images/travelling1.png"/>
@@ -145,12 +165,22 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 						<div class="trip-header">
 							<div class="trip-title">Southern Europe</div> 
 							<div class="trip-dates">Apr - May 2018</div> 
+							<div class="show-trip-button"><i class="fa fa-3x fa-angle-down"></i></div>
 						</div>
-						<div class="show-trip-button"><i class="fa fa-lg fa-plus"></i></div>
+						<div class="expand-spacer"></div>
+						<div class="full-history" data-bind="foreach: getTripLocations('Sprinting Across Europe')">
+							<div class="location-content">
+								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Europe"><img data-bind="attr: {src: mapUrl}"/></a>
+								<div class="location-details">
+									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
+									<p data-bind="text: combinedTimestamp"></p>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 				<div class="location-grid-box">
-					<div class="location">
+					<div class="location" onclick="toggleLocation(event)">
 						<div class="map-wrapper">
 							<img class="dull-image" src="./images/travelling4.png"/>
 							<img class="bright-image" src="./images/travelling4.png"/>
@@ -158,37 +188,43 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 						<div class="trip-header">
 							<div class="trip-title">Northern Europe</div> 
 							<div class="trip-dates">Jul 2017</div> 
+							<div class="show-trip-button"><i class="fa fa-3x fa-angle-down"></i></div> 
 						</div>
-						<div class="show-trip-button"><i class="fa fa-lg fa-plus"></i></div>
+						<div class="expand-spacer"></div>
+						<div class="full-history" data-bind="foreach: getTripLocations('Scandinavipalooza')">
+							<div class="location-content">
+								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Scandinavipalooza"><img data-bind="attr: {src: mapUrl}"/></a>
+								<div class="location-details">
+									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
+									<p data-bind="text: combinedTimestamp"></p>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 				<div class="location-grid-box">
-					<div class="location">
+					<div class="location" onclick="toggleLocation(event)">
 						<div class="map-wrapper">
 							<img class="dull-image" src="./images/travelling5.png"/>
 							<img class="bright-image" src="./images/travelling5.png"/>
 						</div>
 						<div class="trip-header">
-							<div class="trip-title">Everywhere</div>
+							<div class="trip-title">Everywhere</div> 
+							<div class="show-trip-button"><i class="fa fa-3x fa-angle-down"></i></div>
 						</div>
-						<div class="show-trip-button"><i class="fa fa-lg fa-plus"></i></div>
+						<div class="expand-spacer"></div>
+						<div class="full-history" data-bind="foreach: locations">
+							<div class="location-content">
+								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Everywhere"><img data-bind="attr: {src: mapUrl}"/></a>
+								<div class="location-details">
+									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
+									<p data-bind="text: combinedTimestamp"></p>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
-			<!--<div id="location">
-			<h2>LOCATION</h2>
-				<a href="#" data-bind="click: showLocationHistory">See all</a>
-				<div id="location-wrapper" data-bind="with: currentLocation">
-					<div class="location-content">
-						<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="map"><img data-bind="attr: {src: mapUrl}"/></a>
-						<div class="location-details">
-							<p><span data-bind="text: trip"></span></p>
-							<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
-							<p data-bind="text: combinedTimestamp"></p>
-						</div>
-					</div>
-				</div>		
-			</div>-->
 		</div>		
     </body>
 </html>
