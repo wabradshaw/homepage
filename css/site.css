@@ -267,20 +267,40 @@ body {
 
 #about-me {
 	height: fit-content;
-	width: 50vw;
+	max-width:700px;
 	margin-top: auto;
 	margin-bottom: auto;
 	padding: 40px;	
 	border-radius: 10px;
-	background: rgba(255,255,255,0.7);
+	background: rgba(255,255,255,0.8);
 	color: #333;
-    font-size: large;
     line-height: 1.75;
 	text-align: justify;
 }
 
+@media only screen and (min-width: 1280px) {
+	#about-me {
+		margin-right: 50px;
+	}
+}
+
 #about-me > h1 {
-	font-size: 50px;
+	font-size: 30px;
+	margin: 0px;
+}
+
+#header > p {
+	font-size: medium;
+}
+
+@media only screen and (min-width: 768px) {
+	#about-me > h1 {
+		font-size: 50px;
+	}
+	
+	#about-me > p {
+		font-size: large;
+	}
 }
 
 #locations-wrapper {
@@ -341,6 +361,7 @@ body {
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	position: relative;
+	cursor: pointer;
 }
 
 .map-wrapper > img {
