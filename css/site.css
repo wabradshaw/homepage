@@ -565,3 +565,54 @@ body {
 .location-content:last-child .location-details {
     border-bottom: none;
 }
+
+#privacy-wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	background-image: url("../images/kohrong.jpg");
+	background-size: cover;
+	background-attachment:fixed;
+	background-position-x: left;
+	background-position-y: top;
+	position: relative;
+}
+
+#privacy {
+	height: fit-content;
+	max-width:700px;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 40px;	
+	border-radius: 10px;
+	background: rgba(255,255,255,0.8);
+	color: #333;
+    line-height: 1.75;
+	text-align: justify;
+}
+
+@media only screen and (min-width: 1280px) {
+	#privacy {
+		margin-right: 50px;
+	}
+}
+
+#privacy > h1 {
+	font-size: 30px;
+	margin: 0px;
+}
+
+#privacy > p {
+	font-size: medium;
+}
+
+@media only screen and (min-width: 768px) {
+	#privacy > h1 {
+		font-size: 50px;
+	}
+	
+	#privacy > p {
+		font-size: large;
+	}
+}
