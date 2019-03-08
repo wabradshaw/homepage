@@ -18,7 +18,9 @@ $(document).on("click", ".banner a[href^='#']", function(e){
 	var id = $(this).attr("href");
 	if($(id).length > 0){		
 		e.preventDefault();
-		scrollController.scrollTo(id);
+		$("html, body").animate({
+		  'scrollTop':   $(id).offset().top
+		}, 1000);
 	}	
 });
 
