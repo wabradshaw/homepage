@@ -42,6 +42,11 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	color: #f7ffff;
+	transition: opacity 1.5s;
+}
+
+#header.fade > * {
+	opacity: 0;
 }
 
 #header > h1 {
@@ -193,7 +198,7 @@ body {
 	left: 0px;
 	bottom: 0px;
 	right: 0px;
-	transition: opacity 1s;
+	transition: opacity 2s;
 }
 
 .dull-image {
@@ -201,7 +206,8 @@ body {
 }
 
 .project:hover .dull-image,
-.project:focus-within .dull-image {
+.project:focus-within .dull-image,
+.project.focused .dull-image {
 	opacity: 0;
 }
 
@@ -210,7 +216,8 @@ body {
 }
 
 .project:hover .bright-image,
-.project:focus-within .bright-image {
+.project:focus-within .bright-image,
+.project.focused .bright-image {
 	opacity: 1;
 }
 
@@ -276,6 +283,15 @@ body {
 	color: #333;
     line-height: 1.75;
 	text-align: justify;
+}
+
+#about-me {
+	transition: opacity 1s;
+	opacity: 0.001;
+}
+
+#about-me.focused {
+	opacity: 1;
 }
 
 @media only screen and (min-width: 1280px) {
@@ -405,6 +421,18 @@ body {
 	left: 0px;
 	bottom: 0px;
 	right: 0px;
+}
+
+.location > .map-wrapper > img {
+	filter: grayscale(100%);
+	transition: all 1s ease;
+}
+
+.location:focus > .map-wrapper > img, 
+.location:hover > .map-wrapper > img, 
+.location:active > .map-wrapper > img, 
+.location.focused > .map-wrapper > img {
+	filter: grayscale(0%);
 }
 
 .trip-header {

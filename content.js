@@ -126,6 +126,7 @@ function ContentViewModel(){
 		}
 		
 		self.locationsLoaded(true);
+		addTravelsScene();
 	})
 	
 	self.getTripLocations = function(targetName){		
