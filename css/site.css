@@ -35,6 +35,7 @@ body {
 	background-size: cover;
 	background-attachment:fixed;
 	background-position-x: center;
+	position: relative;
 }
 
 #header > * {
@@ -113,6 +114,40 @@ body {
 	}
 }
 
+.banner a {
+	text-decoration: none;
+	color: #333333;
+	cursor: pointer;	
+}
+
+.banner a:hover,
+.banner a:focus,
+.banner a:active {
+	text-decoration: underline;
+    text-shadow: 0 0 black;
+	color: black;
+}
+
+.banner-l {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding: 15px 20px 5px 15px;
+	font-size: 16px;
+	flex-shrink: 0;
+	position: absolute;
+	right:	0px;
+	top:0px;	
+}
+	
+.banner-separator {
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 20px;
+	width: 2px;
+	background-color: #333333;
+}
+
 #projects-wrapper {
 	min-height: 105vh;
 	margin: 0px;
@@ -122,7 +157,8 @@ body {
 	justify-content: center;
 	background-color: #e2e5e5;
 	z-index: 2;
-	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);	
+	position: relative;
 }
 
 #projects {
@@ -270,6 +306,12 @@ body {
 	background-attachment:fixed;
 	background-position-x: left;
 	background-position-y: top;
+	position: relative;
+}
+
+#about-me-wrapper > .banner {	
+	background: rgba(255,255,255,0.8);
+	border-bottom-left-radius: 10px;
 }
 
 #about-me {
@@ -285,12 +327,13 @@ body {
 	text-align: justify;
 }
 
-#about-me {
+#about-me-wrapper * {
 	transition: opacity 1s;
 	opacity: 0.001;
 }
 
-#about-me.focused {
+#about-me-wrapper:focus-within *,
+#about-me-wrapper.focused * {
 	opacity: 1;
 }
 
@@ -329,6 +372,7 @@ body {
 	background-color: #e2e5e5;
 	z-index: 2;
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	position: relative;
 }
 
 #locations {

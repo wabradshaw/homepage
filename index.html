@@ -13,6 +13,8 @@
         <script src="jquery/jquery-3.1.1.min.js"></script>
         <script src="jquery/ui/jquery-ui.min.js"></script>
 		<script src="scrollmagic/ScrollMagic.min.js"></script>
+		<script src="gsap/TweenLite.min.js"></script>
+		<script src="gsap/ScrollToPlugin.min.js"></script>
 		<script src="lightbox/lightbox.js"></script>
 		<script src="knockout/knockout-3.4.2.js"></script>
 		
@@ -22,20 +24,29 @@
     </head>
     <body>
         <div id="header">
-			<!--<div class="banner banner-l banner-menu">
-				<a name="projects-wrapper" tabindex="2">Projects</a>
+			<div class="banner banner-l banner-menu">
+				<a href="#projects-wrapper" tabindex="2">Projects</a>
 				<div class="banner-separator"></div>
-				<a name="about-me-wrapper" tabindex="2">About</a>
+				<a href="#about-me-wrapper" tabindex="2">About</a>
 				<div class="banner-separator"></div>
-				<a name="locations-wrapper" tabindex="2">Travel</a>
+				<a href="#locations-wrapper" tabindex="2">Travel</a>
 				<div class="banner-separator"></div>
 				<a href="./privacypolicy.html" tabindex="2">Privacy</a>
-			</div>-->
+			</div>
             <h1>WILLIAM A BRADSHAW</h1>
             <h2>w.a.bradshaw@gmail.com</h2>
 			<p>Hi, I'm William, a digital nomad specialising in language generation. I talk to people about computers and build computers that talk to people. Scroll down to see a few of the things I've built and where I've built them.</p>
 		</div>
 		<div id="projects-wrapper">
+			<div class="banner banner-l banner-menu">
+				<a href="#header" tabindex="2">Intro</a>
+				<div class="banner-separator"></div>
+				<a href="#about-me-wrapper" tabindex="2">About</a>
+				<div class="banner-separator"></div>
+				<a href="#locations-wrapper" tabindex="2">Travel</a>
+				<div class="banner-separator"></div>
+				<a href="./privacypolicy.html" tabindex="2">Privacy</a>
+			</div>
 			<div id="projects">
 				<div class="grid-box">
 					<h1 id="projects-header">SELECTED PROJECTS</h1>
@@ -100,7 +111,16 @@
 				</div>
 			</div>
 		</div>
-		<div id="about-me-wrapper">		
+		<div id="about-me-wrapper">
+			<div class="banner banner-l banner-menu">
+				<a href="#header" tabindex="2">Intro</a>
+				<div class="banner-separator"></div>
+				<a href="#projects-wrapper" tabindex="2">Projects</a>
+				<div class="banner-separator"></div>
+				<a href="#locations-wrapper" tabindex="2">Travel</a>
+				<div class="banner-separator"></div>
+				<a href="./privacypolicy.html" tabindex="2">Privacy</a>
+			</div>		
 			<div id="about-me">
 				<h1>ABOUT ME</h1>
 				<p></p>
@@ -113,6 +133,15 @@
 			</div>
 		</div>
 		<div id="locations-wrapper" data-bind="if: locationsLoaded">
+			<div class="banner banner-l banner-menu">
+				<a href="#header" tabindex="2">Intro</a>
+				<div class="banner-separator"></div>
+				<a href="#projects-wrapper" tabindex="2">Projects</a>
+				<div class="banner-separator"></div>
+				<a href="#about-me-wrapper" tabindex="2">About</a>
+				<div class="banner-separator"></div>
+				<a href="./privacypolicy.html" tabindex="2">Privacy</a>
+			</div>
 			<div id="locations">
 				<div class="location-grid-box">
 					<h1 id="locations-header">TRAVELS</h1>

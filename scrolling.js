@@ -10,6 +10,18 @@ function addTravelsScene(){
 	scrollController.addScene(travelsScene);
 }
 
+scrollController.scrollTo(function (pos) {
+	TweenLite.to(window, 0.5, {scrollTo: {y: pos}});
+});
+
+$(document).on("click", ".banner a[href^='#']", function(e){
+	var id = $(this).attr("href");
+	if($(id).length > 0){		
+		e.preventDefault();
+		scrollController.scrollTo(id);
+	}	
+});
+
 $( document ).ready(function() {
 
 	var headerlessScene = new ScrollMagic.Scene({
@@ -36,7 +48,7 @@ $( document ).ready(function() {
 											offset: -400,
 											duration: $("#about-me-wrapper").height() + 200
 										})
-										.setClassToggle("#about-me", "focused")
+										.setClassToggle("#about-me-wrapper", "focused")
 										.reverse(true);
 	scrollController.addScene(aboutScene);
 });
