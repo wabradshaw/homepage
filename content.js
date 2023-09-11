@@ -1,14 +1,14 @@
 var baseUrl = "https://wabradshaw.com/travel-history/";
 
 /**
- *Knockout Data class for a trip spanning multiple locations. Could group multiple sub-trips.
+ * Knockout Data class for a trip spanning multiple locations. Could group multiple sub-trips.
  */
-function TripGroup(title, locations, mapUrl){
+function TripGroup(title, locations, mapName){
 	var self = this;
 
 	self.title = title;
 	self.locations = ko.observableArray(locations);
-	self.mapUrl = mapUrl;
+	self.mapUrl = "./images/trips/" + mapName + ".png";
 }
 
 /**
@@ -57,7 +57,7 @@ function ContentViewModel(){
 	groupData.forEach(item => {
 		locations = item["components"].flatMap(item => trips[item]);
 		
-		self.tripGroups.push(new TripGroup(item["title"], locations, item["mapUrl"]));
+		self.tripGroups.push(new TripGroup(item["title"], locations, item["mapName"]));
 	});
 
 	console.log(self.tripGroups());

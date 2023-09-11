@@ -2,22 +2,22 @@ groupData = [
     {
         title: "South East Asia",
         components: ["South East Asia"],
-        mapUrl: "./images/travelling3.png"
+        mapName: "southEastAsia"
     },
     {
         title: "The Balkans",
         components: ["The Balkans"],
-        mapUrl: "./images/travelling2.png"
+        mapName: "balkans"
     },
     {
         title: "Southern Europe",
         components: ["Sprinting Across Europe"],
-        mapUrl: "./images/travelling1.png"
+        mapName: "southernEurope"
     },
     {
         title: "Northern Europe",
         components: ["Scandinavipalooza"],
-        mapUrl: "./images/travelling4.png"
+        mapName: "scandinavia"
     },
     {
         title: "All Trips",
@@ -31,7 +31,7 @@ groupData = [
             "Scandinavipalooza",
             "Arria"
         ],
-        mapUrl: "./images/travelling5.png"
+        mapName: "world"
     }
     
 ]
