@@ -14,13 +14,13 @@ function TripGroup(title, locations, mapName){
 /**
  * Knockout Data class for a single location.
  */
-function Location(uuid, name, country, mapUrl){
+function Location(uuid, name, country, mapName){
 	var self = this;
 
 	self.uuid = uuid;	
 	self.name = name;
 	self.country = country;
-	self.mapUrl = mapUrl;
+	self.mapUrl = "./images/maps/" + mapName + ".png";
 }
 
 /**
@@ -50,7 +50,7 @@ function ContentViewModel(){
 	var trips = {};
 
 	for (trip_name in locationData){		
-		var trip_locations = locationData[trip_name].map(item => new Location(item.uuid, item.name, item.country, item.mapUrl));
+		var trip_locations = locationData[trip_name].map(item => new Location(item.uuid, item.name, item.country, item.mapName));
 		trips[trip_name] = trip_locations;
 	}
 
