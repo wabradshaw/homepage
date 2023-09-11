@@ -56,11 +56,11 @@ function ContentViewModel(){
 
 	groupData.forEach(item => {
 		locations = item["components"].flatMap(item => trips[item]);
-		
+		if(item["title"] == "All Trips"){
+			locations.reverse();
+		}		
 		self.tripGroups.push(new TripGroup(item["title"], locations, item["mapName"]));
 	});
-
-	console.log(self.tripGroups());
 
 	self.locationsLoaded(true);
 	

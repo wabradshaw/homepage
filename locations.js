@@ -1,5 +1,10 @@
 groupData = [
     {
+        title: "Central America",
+        components: ["Central America"],
+        mapName: "centralAmerica"
+    },
+    {
         title: "South East Asia",
         components: ["South East Asia"],
         mapName: "southEastAsia"
@@ -15,21 +20,22 @@ groupData = [
         mapName: "southernEurope"
     },
     {
-        title: "Northern Europe",
-        components: ["Scandinavipalooza"],
-        mapName: "scandinavia"
-    },
-    {
         title: "All Trips",
         components: [
-            "South East Asia",
-            "The Balkans",
-            "Intermission 2: The MacIntyre-Tickner Wedding",
-            "Sprinting Across Europe",            
-            "The Farewell Tour",
-            "More Arria",
+            "Arria",
             "Scandinavipalooza",
-            "Arria"
+            "More Arria",
+            "The Farewell Tour",
+            "Sprinting Across Europe",  
+            "Intermission 2: The MacIntyre-Tickner Wedding",                      
+            "The Balkans",
+            "South East Asia",
+            "Tide",    
+            "Vermut",
+            "TikTok",
+            "Central America",
+            "The Extended Stag",
+            "UK",        
         ],
         mapName: "world"
     }
@@ -39,6 +45,38 @@ groupData = [
 
 
 locationData = {
+    "UK": [
+        {
+            "uuid": -5,
+            "name": "Durham",
+            "country": "England",
+            "mapName": "durham"
+        },
+        {
+            "uuid": -4,
+            "name": "Edinburgh",
+            "country": "Scotland",
+            "mapName": "edinburgh"
+        },
+        {
+            "uuid": -3,
+            "name": "Aberdeen",
+            "country": "Scotland",
+            "mapName": "aberdeen"
+        },
+        {
+            "uuid": -2,
+            "name": "Garrigil",
+            "country": "England",
+            "mapName": "garrigill"
+        },
+        {
+            "uuid": -1,
+            "name": "London",
+            "country": "England",
+            "mapName": "london"
+        }
+    ],
     "Sprinting Across Europe": [
         {
             "uuid": 2,
@@ -461,6 +499,322 @@ locationData = {
             "name": "Bangkok",
             "country": "Thailand",
             "mapName": "bangkok"
+        }
+    ],
+    "Tide": [
+        {
+            "uuid": 97,
+            "name": "Sofia",
+            "country": "Bulgaria",
+            "mapName": "sofia"
+        },
+        {
+            "uuid": 98,
+            "name": "Riga",
+            "country": "Latvia",
+            "mapName": "riga"
+        },
+        {
+            "uuid": 99,
+            "name": "Elva",
+            "country": "Estonia",
+            "mapName": "elva"
+        },
+        {
+            "uuid": 100,
+            "name": "Tallinn",
+            "country": "Estonia",
+            "mapName": "tallinn"
+        },
+        {
+            "uuid": 101,
+            "name": "Barcelona",
+            "country": "Spain",
+            "mapName": "barcelona"
+        },
+        {
+            "uuid": 102,
+            "name": "Sofia",
+            "country": "Bulgaria",
+            "mapName": "sofia"
+        }
+    ],
+    "Vermut": [
+        {
+            "uuid": 103,
+            "name": "Malaga",
+            "country": "Spain",
+            "mapName": "malaga"
+        },
+        {
+            "uuid": 104,
+            "name": "Seville",
+            "country": "Spain",
+            "mapName": "seville"
+        },
+        {
+            "uuid": 105,
+            "name": "Granada",
+            "country": "Spain",
+            "mapName": "granada"
+        },
+        {
+            "uuid": 106,
+            "name": "Madrid",
+            "country": "Spain",
+            "mapName": "madrid"
+        }
+    ],
+    "TikTok": [
+        {
+            "uuid": 107,
+            "name": "Krakow",
+            "country": "Poland",
+            "mapName": "krakow"
+        },
+        {
+            "uuid": 108,
+            "name": "Mechelen",
+            "country": "Belgium",
+            "mapName": "mechelen"
+        },
+        {
+            "uuid": 109,
+            "name": "Brussels",
+            "country": "Belgium",
+            "mapName": "brussels"
+        },
+        {
+            "uuid": 110,
+            "name": "Bruges",
+            "country": "Belgium",
+            "mapName": "bruges"
+        },
+        {
+            "uuid": 111,
+            "name": "Riga",
+            "country": "Latvia",
+            "mapName": "riga"
+        },
+        {
+            "uuid": 112,
+            "name": "Elva",
+            "country": "Estonia",
+            "mapName": "elva"
+        },
+        {
+            "uuid": 113,
+            "name": "Tallinn",
+            "country": "Estonia",
+            "mapName": "tallinn"
+        },
+        {
+            "uuid": 114,
+            "name": "Lisbon",
+            "country": "Portugal",
+            "mapName": "lisbon"
+        },
+        {
+            "uuid": 115,
+            "name": "Sintra",
+            "country": "Portugal",
+            "mapName": "sintra"
+        },
+        {
+            "uuid": 116,
+            "name": "Porto",
+            "country": "Portugal",
+            "mapName": "porto"
+        },
+        {
+            "uuid": 117,
+            "name": "Madrid",
+            "country": "Spain",
+            "mapName": "madrid"
+        },
+        {
+            "uuid": 118,
+            "name": "Toledo",
+            "country": "Spain",
+            "mapName": "toledo"
+        }
+    ],
+    "Central America": [
+        {
+            "uuid": 119,
+            "name": "Cancun",
+            "country": "Mexico",
+            "mapName": "cancun"
+        },
+        {
+            "uuid": 120,
+            "name": "Mexico City",
+            "country": "Mexico",
+            "mapName": "mexico-city"
+        },
+        {
+            "uuid": 121,
+            "name": "Cancun",
+            "country": "Mexico",
+            "mapName": "cancun"
+        },
+        {
+            "uuid": 122,
+            "name": "Chitchen Itza",
+            "country": "Mexico",
+            "mapName": "chichen-itza"
+        },
+        {
+            "uuid": 123,
+            "name": "Tulum",
+            "country": "Mexico",
+            "mapName": "tulum"
+        },
+        {
+            "uuid": 124,
+            "name": "Chetumal",
+            "country": "Mexico",
+            "mapName": "chetumal"
+        },
+        {
+            "uuid": 125,
+            "name": "Caye Caulker",
+            "country": "Belize",
+            "mapName": "caye-caulker"
+        },
+        {
+            "uuid": 126,
+            "name": "Ambergris Caye",
+            "country": "Belize",
+            "mapName": "ambergris"
+        },
+        {
+            "uuid": 127,
+            "name": "San Ignacio",
+            "country": "Belize",
+            "mapName": "san-ignacio"
+        },
+        {
+            "uuid": 128,
+            "name": "Tikal",
+            "country": "Guatemala",
+            "mapName": "tikal"
+        },
+        {
+            "uuid": 129,
+            "name": "Flores",
+            "country": "Guatemala",
+            "mapName": "flores"
+        },
+        {
+            "uuid": 130,
+            "name": "Antigua",
+            "country": "Guatemala",
+            "mapName": "antigua"
+        },
+        {
+            "uuid": 131,
+            "name": "Acatenango",
+            "country": "Guatemala",
+            "mapName": "acatenango"
+        },
+        {
+            "uuid": 132,
+            "name": "Panajachel",
+            "country": "Guatemala",
+            "mapName": "lake-atitlan"
+        },
+        {
+            "uuid": 133,
+            "name": "San Pedro La Laguna",
+            "country": "Guatemala",
+            "mapName": "lake-atitlan"
+        },
+        {
+            "uuid": 134,
+            "name": "Antigua",
+            "country": "Guatemala",
+            "mapName": "antigua"
+        },
+        {
+            "uuid": 135,
+            "name": "Santa Ana",
+            "country": "El Salvador",
+            "mapName": "santa-ana"
+        },
+        {
+            "uuid": 136,
+            "name": "Leon",
+            "country": "Nicaragua",
+            "mapName": "leon"
+        },
+        {
+            "uuid": 137,
+            "name": "San Juan del Sur",
+            "country": "Nicaragua",
+            "mapName": "san-juan-del-sur"
+        },
+        {
+            "uuid": 138,
+            "name": "Ometepe",
+            "country": "Nicaragua",
+            "mapName": "ometepe"
+        },
+        {
+            "uuid": 139,
+            "name": "Liberia",
+            "country": "Costa Rica",
+            "mapName": "liberia"
+        },
+        {
+            "uuid": 140,
+            "name": "Monteverde",
+            "country": "Costa Rica",
+            "mapName": "santa-elena"
+        },
+        {
+            "uuid": 141,
+            "name": "San Jose",
+            "country": "Costa Rica",
+            "mapName": "san-jose"
+        }
+    ],
+    "The Extended Stag": [
+        {
+            "uuid": 142,
+            "name": "Dubrovnik",
+            "country": "Crotia",
+            "mapName": "dubrovnik"
+        },
+        {
+            "uuid": 143,
+            "name": "Hvar",
+            "country": "Crotia",
+            "mapName": "hvar"
+        },
+        {
+            "uuid": 144,
+            "name": "Split",
+            "country": "Crotia",
+            "mapName": "split"
+        },
+        {
+            "uuid": 145,
+            "name": "Zagreb",
+            "country": "Crotia",
+            "mapName": "zagreb"
+        },
+        {
+            "uuid": 146,
+            "name": "Lake Bled",
+            "country": "Slovenia",
+            "mapName": "bled"
+        },
+        {
+            "uuid": 147,
+            "name": "Ljubjana",
+            "country": "Crotia",
+            "mapName": "ljubjana"
         }
     ]
 }
