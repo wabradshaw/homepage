@@ -486,6 +486,9 @@ body {
 }
 
 .trip-title {
+	height: 45px;
+    display: flex;
+    align-items: center;
 	font-size: x-large;
 	font-weight: bold;
 }

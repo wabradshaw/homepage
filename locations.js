@@ -1,4 +1,44 @@
-location_data = {
+groupData = [
+    {
+        title: "South East Asia",
+        components: ["South East Asia"],
+        mapUrl: "./images/travelling3.png"
+    },
+    {
+        title: "The Balkans",
+        components: ["The Balkans"],
+        mapUrl: "./images/travelling2.png"
+    },
+    {
+        title: "Southern Europe",
+        components: ["Sprinting Across Europe"],
+        mapUrl: "./images/travelling1.png"
+    },
+    {
+        title: "Northern Europe",
+        components: ["Scandinavipalooza"],
+        mapUrl: "./images/travelling4.png"
+    },
+    {
+        title: "All Trips",
+        components: [
+            "South East Asia",
+            "The Balkans",
+            "Intermission 2: The MacIntyre-Tickner Wedding",
+            "Sprinting Across Europe",            
+            "The Farewell Tour",
+            "More Arria",
+            "Scandinavipalooza",
+            "Arria"
+        ],
+        mapUrl: "./images/travelling5.png"
+    }
+    
+]
+    
+
+
+locationData = {
     "Sprinting Across Europe": [
         {
             "uuid": 2,

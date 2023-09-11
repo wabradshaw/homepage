@@ -157,116 +157,29 @@
 				<div class="location-grid-box">
 					<h1 id="locations-header">TRAVELS</h1>
 				</div>
+				<!-- ko foreach: tripGroups-->
 				<div class="location-grid-box">
-					<div class="location" onclick="toggleLocation(event)">
+					<div class="location" onclick="toggleLocation(event)" >
 						<div class="map-wrapper">
-							<img class="dull-image" src="./images/travelling3.png"/>
-							<img class="bright-image" src="./images/travelling3.png"/>
-						</div>
+							<img class="dull-image" data-bind="attr: {src: mapUrl}"/>
+							<img class="bright-image" data-bind="attr: {src: mapUrl}"/>
+						</div>						
 						<div class="trip-header">
-							<div class="trip-title">South East Asia</div> 
-							<div class="trip-dates">Oct - Dec 2018</div> 
+							<div class="trip-title"><span data-bind="text: title"></span></div> 
 							<div class="show-trip-button"><i class="fa fa-3x fa-angle-down"></i></div>
-						</div>
+						</div>					
 						<div class="expand-spacer"></div>
-						<div class="full-history" data-bind="foreach: getTripLocations('South East Asia')">
+						<div class="full-history" data-bind="foreach: locations">
 							<div class="location-content">
 								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Asia"><img data-bind="attr: {src: mapUrl}"/></a>
 								<div class="location-details">
 									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
 								</div>
 							</div>
-						</div>	
+						</div>
 					</div>
 				</div>
-				<div class="location-grid-box">
-					<div class="location" onclick="toggleLocation(event)">
-						<div class="map-wrapper">
-							<img class="dull-image" src="./images/travelling2.png"/>
-							<img class="bright-image" src="./images/travelling2.png"/>
-						</div>
-						<div class="trip-header">
-							<div class="trip-title">The Balkans</div> 
-							<div class="trip-dates">Jul - Aug 2018</div> 
-							<div class="show-trip-button"><i class="fa fa-3x fa-angle-down"></i></div>
-						</div>
-						<div class="expand-spacer"></div>
-						<div class="full-history" data-bind="foreach: getTripLocations('The Balkans')">
-							<div class="location-content">
-								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Balkans"><img data-bind="attr: {src: mapUrl}"/></a>
-								<div class="location-details">
-									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				<div class="location-grid-box">
-					<div class="location" onclick="toggleLocation(event)">
-						<div class="map-wrapper">
-							<img class="dull-image" src="./images/travelling1.png"/>
-							<img class="bright-image" src="./images/travelling1.png"/>
-						</div>
-						<div class="trip-header">
-							<div class="trip-title">Southern Europe</div> 
-							<div class="trip-dates">Apr - May 2018</div> 
-							<div class="show-trip-button"><i class="fa fa-3x fa-angle-down"></i></div>
-						</div>
-						<div class="expand-spacer"></div>
-						<div class="full-history" data-bind="foreach: getTripLocations('Sprinting Across Europe')">
-							<div class="location-content">
-								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Europe"><img data-bind="attr: {src: mapUrl}"/></a>
-								<div class="location-details">
-									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				<div class="location-grid-box">
-					<div class="location" onclick="toggleLocation(event)">
-						<div class="map-wrapper">
-							<img class="dull-image" src="./images/travelling4.png"/>
-							<img class="bright-image" src="./images/travelling4.png"/>
-						</div>
-						<div class="trip-header">
-							<div class="trip-title">Northern Europe</div> 
-							<div class="trip-dates">Jul 2017</div> 
-							<div class="show-trip-button"><i class="fa fa-3x fa-angle-down"></i></div> 
-						</div>
-						<div class="expand-spacer"></div>
-						<div class="full-history" data-bind="foreach: getTripLocations('Scandinavipalooza')">
-							<div class="location-content">
-								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Scandinavipalooza"><img data-bind="attr: {src: mapUrl}"/></a>
-								<div class="location-details">
-									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				<div class="location-grid-box">
-					<div class="location" onclick="toggleLocation(event)">
-						<div class="map-wrapper">
-							<img class="dull-image" src="./images/travelling5.png"/>
-							<img class="bright-image" src="./images/travelling5.png"/>
-						</div>
-						<div class="trip-header">
-							<div class="trip-title">All Trips</div>  
-							<div class="trip-dates">Jan 2017 - Now</div> 
-							<div class="show-trip-button"><i class="fa fa-3x fa-angle-down"></i></div>
-						</div>
-						<div class="expand-spacer"></div>
-						<div class="full-history" data-bind="foreach: locations">
-							<div class="location-content">
-								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Everywhere"><img data-bind="attr: {src: mapUrl}"/></a>
-								<div class="location-details">
-									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
+				<!-- /ko -->
 			</div>
 		</div>		
     </body>
