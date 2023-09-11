@@ -171,7 +171,7 @@
 						<div class="expand-spacer"></div>
 						<div class="full-history" data-bind="foreach: locations">
 							<div class="location-content">
-								<a data-bind="attr: {href: mapUrl}" class="location-map" data-lightbox="Asia"><img data-bind="attr: {src: mapUrl}"/></a>
+								<a data-bind="attr: {href: mapUrl, title: name, 'data-lightbox': $parent.title}" class="location-map"><img data-bind="attr: {src: mapUrl}"/></a>
 								<div class="location-details">
 									<p><span data-bind="text: name"></span>, <span data-bind="text: country"></span></span></p>
 								</div>
