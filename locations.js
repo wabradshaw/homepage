@@ -35,6 +35,7 @@ groupData = [
             "TikTok",
             "Central America",
             "The Extended Stag",
+            "Qatalog",
             "UK",        
         ],
         mapName: "world"
@@ -783,25 +784,25 @@ locationData = {
         {
             "uuid": 142,
             "name": "Dubrovnik",
-            "country": "Crotia",
+            "country": "Croatia",
             "mapName": "dubrovnik"
         },
         {
             "uuid": 143,
             "name": "Hvar",
-            "country": "Crotia",
+            "country": "Croatia",
             "mapName": "hvar"
         },
         {
             "uuid": 144,
             "name": "Split",
-            "country": "Crotia",
+            "country": "Croatia",
             "mapName": "split"
         },
         {
             "uuid": 145,
             "name": "Zagreb",
-            "country": "Crotia",
+            "country": "Croatia",
             "mapName": "zagreb"
         },
         {
@@ -813,8 +814,40 @@ locationData = {
         {
             "uuid": 147,
             "name": "Ljubjana",
-            "country": "Crotia",
+            "country": "Slovenia",
             "mapName": "ljubjana"
+        }
+    ],
+    "Qatalog": [
+        {
+            "uuid": 148,
+            "name": "Malta",
+            "country": "Malta",
+            "mapName": "malta"
+        },
+        {
+            "uuid": 149,
+            "name": "Granada",
+            "country": "Spain",
+            "mapName": "granada"
+        },
+        {
+            "uuid": 150,
+            "name": "Cogollos Vegas",
+            "country": "Spain",
+            "mapName": "cogollos-vegas"
+        },
+        {
+            "uuid": 151,
+            "name": "Stockholm",
+            "country": "Sweden",
+            "mapName": "stockholm"
+        },
+        {
+            "uuid": 152,
+            "name": "Uppsala",
+            "country": "Sweden",
+            "mapName": "uppsala"
         }
     ]
 }
