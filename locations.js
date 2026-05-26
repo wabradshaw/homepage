@@ -36,6 +36,7 @@ groupData = [
             "Central America",
             "The Extended Stag",
             "Qatalog",
+            "Synthesized",
             "UK",        
         ],
         mapName: "world"
@@ -848,6 +849,38 @@ locationData = {
             "name": "Uppsala",
             "country": "Sweden",
             "mapName": "uppsala"
+        }
+    ],
+    "Synthesized": [
+        {
+            "uuid": 153,
+            "name": "Los Angeles",
+            "country": "California",
+            "mapName": "la"
+        },
+        {
+            "uuid": 154,
+            "name": "Amsterdam",
+            "country": "Netherlands",
+            "mapName": "amsterdam"
+        },
+        {
+            "uuid": 155,
+            "name": "Hamburg",
+            "country": "Germany",
+            "mapName": "hamburg"
+        },
+        {
+            "uuid": 156,
+            "name": "Aarhus",
+            "country": "Denmark",
+            "mapName": "aarhus"
+        },
+        {
+            "uuid": 157,
+            "name": "Copenhagen",
+            "country": "Denmark",
+            "mapName": "copenhagen"
         }
     ]
 }
