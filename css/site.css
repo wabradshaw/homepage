@@ -31,7 +31,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-image: url("../images/luang.jpg");
+	background-image: url("../images/fuego.jpg");
 	background-size: cover;
 	background-attachment:fixed;
 	background-position-x: center;
@@ -79,7 +79,7 @@ body {
 	
 	#header > h2 {
 		font-size: 24px;
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 	}
 
 	#header > p {
@@ -99,7 +99,7 @@ body {
 	
 	#header > h2 {
 		font-size: 28px;
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 	}
 
 	#header > p {
@@ -110,7 +110,8 @@ body {
 
 @media only screen and (min-width: 1000px) {
 	#header {
-		padding-left: 30vw;
+		padding-left: 5vw;
+		padding-right: 40vw;
 	}
 }
 
@@ -146,6 +147,11 @@ body {
 	height: 20px;
 	width: 2px;
 	background-color: #333333;
+}
+
+#header > .banner {	
+	background: rgba(255,255,255,0.8);
+	border-bottom-left-radius: 10px;
 }
 
 #projects-wrapper {
