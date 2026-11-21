@@ -20,7 +20,14 @@ $(document).on("click", ".banner a[href^='#']", function(e){
 		e.preventDefault();
 		$("html, body").animate({
 		  'scrollTop':   $(id).offset().top
-		}, 1000);
+		}, 1000, function(){
+			// Move keyboard focus to the section so the next Tab continues from there
+			var heading = $(id).find("h1").first();
+			if(heading.length > 0){
+				if(!heading.attr("tabindex")){ heading.attr("tabindex", "-1"); }
+				heading[0].focus({preventScroll: true});
+			}
+		});
 	}	
 });
 

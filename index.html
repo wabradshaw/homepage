@@ -5,7 +5,7 @@
         content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-        <link rel="stylesheet" type="text/css" href="css/site.css?v=2.0" />
+        <link rel="stylesheet" type="text/css" href="css/site.css?v=2.1" />
         <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
         <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" /> 
 		<link rel="stylesheet" type="text/css" href="lightbox/lightbox.css" />
@@ -18,7 +18,7 @@
 		
 		<script src="locations.js"></script>
 		<script src="content.js"></script>
-		<script src="scrolling.js"></script>				
+		<script src="scrolling.js?v=2.1"></script>				
         <title>William Bradshaw</title>
 		
 		<link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
@@ -34,30 +34,35 @@
 		<meta name="theme-color" content="#333333">
     </head>
     <body>
+		<a class="skip-link" href="#intro-heading">Skip to content</a>
         <div id="header">
-			<div class="banner banner-l banner-menu">
-				<a href="#projects-wrapper" tabindex="2">Projects</a>
+			<nav class="banner banner-l banner-menu" aria-label="Sections">
+				<a href="#header" aria-current="true">Intro</a>
 				<div class="banner-separator"></div>
-				<a href="#about-me-wrapper" tabindex="2">About</a>
+				<a href="#projects-wrapper">Projects</a>
 				<div class="banner-separator"></div>
-				<a href="#locations-wrapper" tabindex="2">Travel</a>
+				<a href="#about-me-wrapper">About</a>
 				<div class="banner-separator"></div>
-				<a href="./privacypolicy.html" tabindex="2">Privacy</a>
-			</div>
-            <h1>WILLIAM A BRADSHAW</h1>
+				<a href="#locations-wrapper">Travel</a>
+				<div class="banner-separator"></div>
+				<a href="./privacypolicy.html">Privacy</a>
+			</nav>
+            <h1 id="intro-heading" tabindex="-1">WILLIAM A BRADSHAW</h1>
             <h2>w.a.bradshaw@gmail.com</h2>
 			<p>Hi, I'm William. I talk to people about computers and build computers that talk to people. Scroll down to see a few of the things I've built and where I've built them.</p>
 		</div>
 		<div id="projects-wrapper">
-			<div class="banner banner-l banner-menu">
-				<a href="#header" tabindex="2">Intro</a>
+			<nav class="banner banner-l banner-menu" aria-label="Sections">
+				<a href="#header">Intro</a>
 				<div class="banner-separator"></div>
-				<a href="#about-me-wrapper" tabindex="2">About</a>
+				<a href="#projects-wrapper" aria-current="true">Projects</a>
 				<div class="banner-separator"></div>
-				<a href="#locations-wrapper" tabindex="2">Travel</a>
+				<a href="#about-me-wrapper">About</a>
 				<div class="banner-separator"></div>
-				<a href="./privacypolicy.html" tabindex="2">Privacy</a>
-			</div>
+				<a href="#locations-wrapper">Travel</a>
+				<div class="banner-separator"></div>
+				<a href="./privacypolicy.html">Privacy</a>
+			</nav>
 			<div id="projects">
 				<div class="grid-box">
 					<h1 id="projects-header">SELECTED PROJECTS</h1>
@@ -124,15 +129,17 @@
 			</div>
 		</div>
 		<div id="about-me-wrapper">
-			<div class="banner banner-l banner-menu">
-				<a href="#header" tabindex="2">Intro</a>
+			<nav class="banner banner-l banner-menu" aria-label="Sections">
+				<a href="#header">Intro</a>
 				<div class="banner-separator"></div>
-				<a href="#projects-wrapper" tabindex="2">Projects</a>
+				<a href="#projects-wrapper">Projects</a>
 				<div class="banner-separator"></div>
-				<a href="#locations-wrapper" tabindex="2">Travel</a>
+				<a href="#about-me-wrapper" aria-current="true">About</a>
 				<div class="banner-separator"></div>
-				<a href="./privacypolicy.html" tabindex="2">Privacy</a>
-			</div>		
+				<a href="#locations-wrapper">Travel</a>
+				<div class="banner-separator"></div>
+				<a href="./privacypolicy.html">Privacy</a>
+			</nav>		
 			<div id="about-me">
 				<h1>ABOUT ME</h1>
 				<p></p>
@@ -142,15 +149,17 @@
 			</div>
 		</div>
 		<div id="locations-wrapper" data-bind="if: locationsLoaded">
-			<div class="banner banner-l banner-menu">
-				<a href="#header" tabindex="2">Intro</a>
+			<nav class="banner banner-l banner-menu" aria-label="Sections">
+				<a href="#header">Intro</a>
 				<div class="banner-separator"></div>
-				<a href="#projects-wrapper" tabindex="2">Projects</a>
+				<a href="#projects-wrapper">Projects</a>
 				<div class="banner-separator"></div>
-				<a href="#about-me-wrapper" tabindex="2">About</a>
+				<a href="#about-me-wrapper">About</a>
 				<div class="banner-separator"></div>
-				<a href="./privacypolicy.html" tabindex="2">Privacy</a>
-			</div>
+				<a href="#locations-wrapper" aria-current="true">Travel</a>
+				<div class="banner-separator"></div>
+				<a href="./privacypolicy.html">Privacy</a>
+			</nav>
 			<div id="locations">
 				<div class="location-grid-box">
 					<h1 id="locations-header">TRAVELS</h1>

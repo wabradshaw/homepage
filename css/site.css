@@ -129,6 +129,34 @@ body {
 	color: black;
 }
 
+.skip-link {
+	position: absolute;
+	left: 10px;
+	top: -100px;
+	z-index: 1000;
+	padding: 10px 15px;
+	background: white;
+	color: #333333;
+	border-radius: 4px;
+}
+
+.skip-link:focus {
+	top: 10px;
+}
+
+h1[tabindex="-1"]:focus {
+	outline: none;
+}
+
+.banner a[aria-current] {
+	color: black;
+	text-shadow: 0 0 black;
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 4px;
+	cursor: default;
+}
+
 .banner-l {
 	display: flex;
 	flex-direction: row;
@@ -147,6 +175,18 @@ body {
 	height: 20px;
 	width: 2px;
 	background-color: #333333;
+}
+
+@media only screen and (max-width: 400px) {
+	.banner-l {
+		padding: 12px 10px 5px 10px;
+		font-size: 14px;
+	}
+
+	.banner-separator {
+		margin-left: 6px;
+		margin-right: 6px;
+	}
 }
 
 #header > .banner {	
