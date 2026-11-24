@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.0792508"
-     inkscape:cx="744.01798"
-     inkscape:cy="108.45252"
+     inkscape:zoom="0.36756309"
+     inkscape:cx="506.03557"
+     inkscape:cy="-175.48008"
      inkscape:window-width="2560"
      inkscape:window-height="1369"
      inkscape:window-x="-8"
@@ -51,7 +51,10 @@
        height="39.6875"
        id="page2"
        margin="0"
-       bleed="0" />
+       bleed="0"
+       inkscape:export-filename="other-wb-alt.png"
+       inkscape:export-xdpi="112"
+       inkscape:export-ydpi="112" />
     <inkscape:grid
        id="grid2"
        units="mm"
